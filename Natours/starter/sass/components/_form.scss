@@ -2,7 +2,7 @@
     &__group:not(:last-child) { // trick to select everything but the last child
         margin-bottom: 2rem;
     }
-
+    
     &__input {
         font-size: 1.5rem;
         font-family: inherit; //this element will now inherit the font-family. input elements are an exception that need this because they don't do it automatically like most elements
@@ -16,6 +16,10 @@
         display: block;
         transition: all .3s;
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+        
         &::-webkit-input-placeholder { //pseudo-elements are things that are actually on the page, like a placeholder. pseudo-classes are more like a state (eg. :hover)
             color: $color-grey-dark-2;
         }
@@ -54,6 +58,11 @@
     &__radio-group {
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input {
