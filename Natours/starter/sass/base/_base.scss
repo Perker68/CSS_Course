@@ -33,3 +33,10 @@ body {
     }
 
 }
+
+// to change appearance when user highlights text:
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
