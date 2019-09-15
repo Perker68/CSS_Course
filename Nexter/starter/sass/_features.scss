@@ -1,4 +1,32 @@
 .features {
-    background-color: $color-grey-light-2;
     grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // here's that combo that makes it a little "responsive" with no media queries
+    gap: 6rem;
+    align-items: start;  // moves all the short blurps to the top of their cell
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    row-gap: 1.5rem;
+    column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary; // this is how we color svg items (with "fill")
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2;
+        margin-top: -1rem;
+        // transform: translateY(-1rem); //he did this and not the negative margin that you did. not really sure the difference
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
 }
